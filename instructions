@@ -1,0 +1,36 @@
+1.start project using 
+
+django-admin startproject mysite
+
+it will create folder named mysite with all necessary folders and files
+
+2.>>
+python manage.py runserver 8080
+starts server on port no 8080
+
+3.>>>>>
+Some of these applications make use of at least one database table, though, so we need to create the tables in the database before we can use them. To do that, run the following command:
+python manage.py migrate
+
+4.>>>>>>>>>
+python manage.py makemigrations polls
+Now Django knows to include the polls app. Let’s run another command:
+
+5.>>>>>>>>>>>
+Now, run migrate again to create those model tables in your database:
+python manage.py migrate
+
+
+6.>>>>>>>>>>>>>
+Migrations are very powerful and let you change your models over time, as you develop your project, without the need to delete your database or tables and make new ones - it specializes in upgrading your database live, without losing data. We’ll cover them in more depth in a later part of the tutorial, but for now, remember the three-step guide to making model changes:
+
+Change your models (in models.py).
+Run python manage.py makemigrations to create migrations for those changes
+Run python manage.py migrate to apply those changes to the database.
+
+
+7.>>>>>>>>>>>.
+Creating an admin user¶
+First we’ll need to create a user who can login to the admin site. Run the following command:
+
+python manage.py createsuperuser
