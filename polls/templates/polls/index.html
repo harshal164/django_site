@@ -1,0 +1,21 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+
+
+{% if latest_question_list %}
+    <ul>
+    {% for question in latest_question_list %}
+    <a href="{% url 'polls:detail' question.id %}">
+    <div class="card-panel teal lighten-2">
+            <li class='center'>{{ question.question_text }}</li>
+        </div>
+    </a>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
